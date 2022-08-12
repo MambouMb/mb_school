@@ -98,12 +98,12 @@ class _CategCardState extends State<CategCard> {
                   },
                 );
               } else if(snapshot.connectionState == ConnectionState.waiting){
-                return CircularProgressIndicator();
+                return CircularProgressIndicator(color: Config.colors.primaryTextColor,);
 
               }
               else{
-                return Container(
-                  child: Text('Text'),
+                return const Center(
+                  child: Text('Error Connection'),
                 );
               }
             }

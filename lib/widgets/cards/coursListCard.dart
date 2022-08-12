@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
@@ -49,7 +50,7 @@ class _CoursListState extends State<CoursList> {
                             blurRadius: 20,
                             color: Colors.black.withOpacity(.1),
                             offset: const Offset(10, 10),
-                          )
+                          ),
                         ]),
                     child: Stack(
                       children: [
@@ -61,8 +62,15 @@ class _CoursListState extends State<CoursList> {
                               width: MediaQuery.of(context).size.width,
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(8.0),
-                                child: Image.network("${snapshot.data.docs[index].data()['Cphoto']}",
-                                  fit: BoxFit.fill,),
+                                child: CachedNetworkImage(
+                                  imageUrl: '${snapshot.data.docs[index]
+                                      .data()['Cphoto']}',
+                                  fit: BoxFit.cover,
+                                  placeholder: (context, url) => Image.asset(Config.assets.loading),
+                                  errorWidget: (context, url, error) => const Icon(Icons.error),
+                                  height: 100,
+                                  width: 100,
+                                ),
                               ),
                             ),
                             const SizedBox(
@@ -139,11 +147,13 @@ class _CoursListState extends State<CoursList> {
                 },
               );
             }
-            if(snapshot.connectionState == ConnectionState.waiting){
-              return Loading();
+            else if(snapshot.connectionState == ConnectionState.waiting){
+              return CircularProgressIndicator(color: Config.colors.primaryTextColor,);
             }
             else{
-              return Text("Error");
+              return const Center(
+                child: Text('Error Connection'),
+              );
             }
           }
           ),
