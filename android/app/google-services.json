@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "9151024375",
+    "firebase_url": "https://mbshool-f5190-default-rtdb.firebaseio.com",
+    "project_id": "mbshool-f5190",
+    "storage_bucket": "mbshool-f5190.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:9151024375:android:6410177707e0bdba5657f2",
+        "android_client_info": {
+          "package_name": "william.com.mbschool"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "9151024375-iq2qrk6tg2v59m01be3dljvraavgrese.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCzFcwNnaXCnlr-fkYIFNLtVjL7JKoRHqQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "9151024375-iq2qrk6tg2v59m01be3dljvraavgrese.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "9151024375-2durnfuro4oasme4sb47vu4vq1ac7t34.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "william.com.mbSchool"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
