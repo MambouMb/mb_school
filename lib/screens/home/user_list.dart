@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:mb_school/models/Question.dart';
 import 'package:mb_school/models/cours.dart';
 import 'package:mb_school/models/user.dart';
-import 'package:mb_school/screens/home/homeScreens/question_card.dart';
+import 'package:mb_school/screens/home/homeScreens/cards/question_card.dart';
 import 'package:provider/provider.dart';
 
 class UserList extends StatefulWidget {

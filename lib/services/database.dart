@@ -4,10 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:mb_school/models/globalController.dart';
 import 'package:mb_school/models/user.dart';
 import 'package:firebase_database/firebase_database.dart';
-import 'package:fluttertoast/fluttertoast.dart';
-import 'package:flutter_switch/flutter_switch.dart';
-import 'package:image_picker/image_picker.dart';
-import 'package:mb_school/screens/login_screen.dart';
 
 import '../models/cours.dart';
 

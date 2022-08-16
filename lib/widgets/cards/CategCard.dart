@@ -53,44 +53,47 @@ class _CategCardState extends State<CategCard> {
                             ]),
                         child: Stack(
                           children: [
-                            Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Container(
-                                  height: 60,
-                                  width: MediaQuery
-                                      .of(context)
-                                      .size
-                                      .width,
-                                  child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(8.0),
-                                      child: CachedNetworkImage(
-                                        imageUrl: '${snapshot.data.docs[index]
-                                            .data()['imageName']}',
-                                        fit: BoxFit.cover,
-                                        placeholder: (context, url) => Image.asset(Config.assets.loading),
-                                        errorWidget: (context, url, error) => const Icon(Icons.error),
-                                        height: 100,
-                                        width: 100,
-                                      ),
+                            GestureDetector(
+                              onTap: (){},
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Container(
+                                    height: 60,
+                                    width: MediaQuery
+                                        .of(context)
+                                        .size
+                                        .width,
+                                    child: ClipRRect(
+                                        borderRadius: BorderRadius.circular(8.0),
+                                        child: CachedNetworkImage(
+                                          imageUrl: '${snapshot.data.docs[index]
+                                              .data()['imageName']}',
+                                          fit: BoxFit.cover,
+                                          placeholder: (context, url) => Image.asset(Config.assets.loading),
+                                          errorWidget: (context, url, error) => const Icon(Icons.error),
+                                          height: 100,
+                                          width: 100,
+                                        ),
+                                    ),
                                   ),
-                                ),
-                                const SizedBox(
-                                  height: 10,
-                                ),
-                                RichText(
-                                  textAlign: TextAlign.center,
-                                  overflow: TextOverflow.ellipsis,
-                                  text: TextSpan(
-                                    text: ("${snapshot.data.docs[index]
-                                        .data()['nom']}"),
-                                    style: TextStyle(
-                                        color: Config.colors.tirthTextColor,
-                                        fontSize: 15),
+                                  const SizedBox(
+                                    height: 10,
                                   ),
-                                ),
-                              ],
+                                  RichText(
+                                    textAlign: TextAlign.center,
+                                    overflow: TextOverflow.ellipsis,
+                                    text: TextSpan(
+                                      text: ("${snapshot.data.docs[index]
+                                          .data()['nom']}"),
+                                      style: TextStyle(
+                                          color: Config.colors.tirthTextColor,
+                                          fontSize: 15),
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
                           ],
                         )

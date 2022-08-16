@@ -57,19 +57,22 @@ class _CoursListState extends State<CoursList> {
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Container(
-                              height: 120,
-                              width: MediaQuery.of(context).size.width,
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(8.0),
-                                child: CachedNetworkImage(
-                                  imageUrl: '${snapshot.data.docs[index]
-                                      .data()['Cphoto']}',
-                                  fit: BoxFit.cover,
-                                  placeholder: (context, url) => Image.asset(Config.assets.loading),
-                                  errorWidget: (context, url, error) => const Icon(Icons.error),
-                                  height: 100,
-                                  width: 100,
+                            GestureDetector(
+                              onTap: (){},
+                              child: SizedBox(
+                                height: 120,
+                                width: MediaQuery.of(context).size.width,
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(8.0),
+                                  child: CachedNetworkImage(
+                                    imageUrl: '${snapshot.data.docs[index]
+                                        .data()['Cphoto']}',
+                                    fit: BoxFit.cover,
+                                    placeholder: (context, url) => Image.asset(Config.assets.loading),
+                                    errorWidget: (context, url, error) => const Icon(Icons.error),
+                                    height: 100,
+                                    width: 100,
+                                  ),
                                 ),
                               ),
                             ),
@@ -95,9 +98,6 @@ class _CoursListState extends State<CoursList> {
                             ),
                             Text( "${snapshot.data.docs[index].data()['categorie']}",
                               style: Config.styles.titleStyle.copyWith(fontSize: 13),
-                            ),
-                            const SizedBox(
-                              height: 5,
                             ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -130,12 +130,17 @@ class _CoursListState extends State<CoursList> {
                                     ),
                                   ],
                                 ),
-
                                 Container(
-                                  child: Icon(Icons.favorite_outline,
+                                  margin: EdgeInsets.all(5),
+                                  width: 20,
+                                  height: 20,
+                                  child: IconButton(
+                                      onPressed: (){}, icon: const Icon(
+                                      Icons.favorite_outline,
+                                      size: 25),
                                     color: Colors.red,
-                                    size: 25,
-                                  ),
+                                    tooltip: 'Add favorite',
+                                ),
                                 ),
                               ],
                             )

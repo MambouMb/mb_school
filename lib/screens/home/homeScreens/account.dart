@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -15,20 +16,10 @@ class Account extends StatefulWidget {
 }
 
 class _AccountState extends State<Account> {
+  var esCollection = FirebaseFirestore.instance.collection('Enseignant').doc();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        actions: [
-          IconButton(
-              onPressed: (){
-                print('basket window');
-              },
-              icon: const Icon(FontAwesomeIcons.basketShopping, color: Colors.blue))
-        ],
-        backgroundColor: Config.colors.bgfondu,
-        title: Text("Account", style: TextStyle(color: Config.colors.gbColor),),
-      ),
       backgroundColor: Config.colors.bgfondu,
       body: SingleChildScrollView(
         child: Padding(
@@ -80,7 +71,9 @@ class _AccountState extends State<Account> {
                     style: TextStyle(color: Config.colors.tirthTextColor,
                     fontSize: 20.0,
                     fontFamily: 'roboto_bold'),),
-                trailing: Icon(FontAwesomeIcons.arrowRightLong, color: Config.colors.gbColor,),
+                trailing: IconButton(
+                  icon: Icon(FontAwesomeIcons.arrowRightLong, color: Config.colors.gbColor,),
+                  onPressed: (){},),
               ),
               ListTile(
                 leading: Icon(FontAwesomeIcons.circleUser, color: Config.colors.gbColor,),
@@ -88,7 +81,9 @@ class _AccountState extends State<Account> {
                   style: TextStyle(color: Config.colors.tirthTextColor,
                       fontSize: 20.0,
                       fontFamily: 'roboto_bold'),),
-                trailing: Icon(FontAwesomeIcons.arrowRightLong, color: Config.colors.gbColor,),
+                trailing: IconButton(
+                  icon: Icon(FontAwesomeIcons.arrowRightLong, color: Config.colors.gbColor,),
+                  onPressed: (){},),
               ),
               ListTile(
                 leading: Icon(FontAwesomeIcons.unlockKeyhole, color: Config.colors.gbColor,),
@@ -96,7 +91,9 @@ class _AccountState extends State<Account> {
                   style: TextStyle(color: Config.colors.tirthTextColor,
                       fontSize: 20.0,
                       fontFamily: 'roboto_bold'),),
-                trailing: Icon(FontAwesomeIcons.arrowRightLong, color: Config.colors.gbColor,),
+                trailing: IconButton(
+                  icon: Icon(FontAwesomeIcons.arrowRightLong, color: Config.colors.gbColor,),
+                onPressed: (){},),
               ),
               MaterialButton(
                 onPressed: () async {
